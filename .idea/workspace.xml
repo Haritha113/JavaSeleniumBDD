@@ -5,31 +5,93 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="93dc6d2b-324b-4b6c-bebb-115c01f94949" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Pages/AddEmployeePage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Pages/Base.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Pages/LoginPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Pages/UserMangmntPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/MyStepdefs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/StepDefs/AddEmployeeSteps.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/StepDefs/LoginSteps.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/StepDefs/LogoutSteps.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/StepDefs/UserMngmntSteps.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/Features/Login.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/Features/add_employee.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/Features/logout.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/Features/user_management.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="AnnotationType" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 5
+}]]></component>
   <component name="ProjectId" id="2vgRTUDnPGeTHkfe0DyrSF17r38" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Cucumber Java.Scenario: login scenario with valid credentials.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/haritha/IdeaProjects/Practice/JavaSeleniumBDD/src/test/java/StepDefs",
     "onboarding.tips.debug.path": "C:/Users/haritha/IdeaProjects/Practice/SeleniumBDD/src/main/java/org/example/Main.java"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="Scenario: login scenario with valid credentials" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/Features/Login.feature" />
+      <option name="GLUE" value="StepDefs/LoginSteps" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="BDDFramework" />
+      <option name="NAME_FILTER" value="^login scenario with valid credentials$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^login scenario with valid credentials$&quot;" />
+      <shortenClasspath name="NONE" />
+      <option name="SUGGESTED_NAME" value="Scenario: login scenario with valid credentials" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Cucumber Java.Scenario: login scenario with valid credentials" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-22-openjdk-22-3183f394aec4-bad0321e" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
