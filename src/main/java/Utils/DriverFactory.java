@@ -1,11 +1,11 @@
-package Utils;
+package utils;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class DriverFactory {
-    public static WebDriver driver;
+    private static WebDriver driver;
 
     public static WebDriver getDriver() {
         if (driver == null) {
@@ -13,5 +13,12 @@ public class DriverFactory {
             driver = new ChromeDriver();
         }
         return driver;
+    }
+
+    public static void quitDriver() {
+        if (driver != null) {
+            driver.quit();
+            driver = null; // 🔥 CRUCIAL: Reset to null for next scenario
+        }
     }
 }
