@@ -12,7 +12,7 @@ public class LoginSteps {
     LoginPage loginPage = new LoginPage();
 
 
-    @When("user enters {string} and {string}")
+    @When("^user enters (.*) and (.*)$")
     public void enterCredentials(String username,String password) {
         loginPage.enterValidCredentials(username,password);
     }
