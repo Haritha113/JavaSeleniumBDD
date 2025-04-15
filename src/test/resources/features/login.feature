@@ -18,4 +18,4 @@ Scenario Outline: login scenario with valid credentials
 
   Examples:
     | username | password  | errormsg |
-    | Admin    |  admin123 | errormsg |
+    | hello    |  worlsddf | Invalid credentials |

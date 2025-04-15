@@ -14,7 +14,9 @@ public class LogoutPage extends BasePage{
     BasePage basePage = new BasePage(driver);
 
     public void logout(){
-        WebElement webElement = driver.findElement(By.linkText("/web/index.php/auth/logout"));
+        WebElement element = driver.findElement(By.cssSelector("p.oxd-userdropdown-name"));
+        basePage.click(element);
+        WebElement webElement = driver.findElement(By.xpath("//a[@href='/web/index.php/auth/logout']"));
         basePage.click(webElement);
     }
 }

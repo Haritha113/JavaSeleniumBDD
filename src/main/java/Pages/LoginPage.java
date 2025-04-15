@@ -28,7 +28,7 @@ public class LoginPage extends BasePage {
        return driver.findElement(By.cssSelector("div.oxd-topbar-header-title")).isDisplayed();
     }
 
-    public void enterValidCredentials(String username, String password) {
+    public void enterLoginCredentials(String username, String password) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement usernamel = wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("username")));
         usernamel.sendKeys(username);

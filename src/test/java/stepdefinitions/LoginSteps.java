@@ -18,7 +18,7 @@ public class LoginSteps {
 
     @When("^user enters (.*) and (.*)$")
     public void enterCredentials(String username,String password) {
-        loginPage.enterValidCredentials(username,password);
+        loginPage.enterLoginCredentials(username,password);
     }
 
     @Then("User should see the dashboard for valid credentials")
