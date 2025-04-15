@@ -1,4 +1,4 @@
-package StepDefs;
+package stepdefinitions;
 
 public class UserMngmntSteps {
 }

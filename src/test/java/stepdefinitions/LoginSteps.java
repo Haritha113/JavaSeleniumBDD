@@ -1,17 +1,18 @@
 package stepdefinitions;
 
-import Pages.Base;
 import Pages.LoginPage;
+import Utils.DriverFactory;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.WebDriver;
 
 public class LoginSteps {
 
-
-    private static LoginPage loginPage = new LoginPage();
+    WebDriver driver = DriverFactory.getDriver();
+    LoginPage loginPage = new LoginPage(driver);
 
 
 
@@ -20,11 +21,9 @@ public class LoginSteps {
         loginPage.enterValidCredentials(username,password);
     }
 
-
     @Then("User should see the dashboard for valid credentials")
     public void dashboardShouldBeAvailable() {
         Assert.assertTrue(loginPage.isDashboardAvailable());
-        loginPage.closeBrowser();
     }
 
     @And("User clicks on login button")
@@ -32,8 +31,18 @@ public class LoginSteps {
         loginPage.clickOnLogin();
     }
 
-    @Given("url is {string}")
-    public void url(String string) {
-        loginPage.login(string);
+    @Given("hrm page is {string}")
+    public void url(String url) {
+        loginPage.login(url);
+    }
+
+    @Then("user should be logged out successfully")
+    public void userShouldBeLoggedOutSuccessfully() {
+        Assert.assertTrue(loginPage.isUserOnLoginPage());
+    }
+
+    @Then("^user should see prompt with text (.*)$")
+    public void userShouldSeeErrormsg(String errorMsg) {
+        Assert.assertEquals(loginPage.checkForInvalidLogin(),errorMsg);
     }
 }

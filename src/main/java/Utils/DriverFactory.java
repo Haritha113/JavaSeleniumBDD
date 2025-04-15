@@ -1,4 +1,4 @@
-package utils;
+package Utils;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -18,7 +18,8 @@ public class DriverFactory {
     public static void quitDriver() {
         if (driver != null) {
             driver.quit();
-            driver = null; // 🔥 CRUCIAL: Reset to null for next scenario
+            driver = null;
         }
     }
 }
+

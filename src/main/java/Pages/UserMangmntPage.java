@@ -1,4 +1,4 @@
 package Pages;
 
-public class UserMangmntPage extends Base{
+public class UserMangmntPage {
 }
