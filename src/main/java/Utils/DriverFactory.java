@@ -13,6 +13,7 @@ public class DriverFactory {
             WebDriverManager.chromedriver().setup();
             ChromeOptions chromeOptions = new ChromeOptions();
             chromeOptions.addArguments("--incognito");
+            chromeOptions.addArguments("--headless");
             driver = new ChromeDriver(chromeOptions);
             driver.manage().window().maximize();
         }

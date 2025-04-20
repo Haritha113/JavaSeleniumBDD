@@ -15,6 +15,6 @@ public class UtilMethods {
     }
 
     public static String generateRandomEmpName() {
-        return  String.valueOf(new Random().nextInt(26) + 'a');
+        return  String.valueOf((char)(new Random().nextInt(26)     + 'A'));
     }
 }

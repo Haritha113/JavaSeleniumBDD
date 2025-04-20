@@ -36,7 +36,7 @@ public class UserMangmntPage extends BasePage {
     public String addUserDetailsAndReturnEmpName(String role, String status, String generatedEmpName, String generatedUsername, String generatedPassword) {
         driver.findElement(By.xpath("//label[text()='User Role']//..//..//..//div[contains(@class,'oxd-select-wrapper')]")).click();
        System.out.println(role);
-        driver.findElement(By.xpath("//span[text()='"+ role +"'")).click();
+        driver.findElement(By.xpath("//span[text()='"+ role +"']")).click();
 
         WebElement element = driver.findElement(By.xpath("//label[text()='Username']//..//..//..//input[contains(@class,'oxd-input oxd-input--active')]"));
         element.click();
@@ -44,18 +44,34 @@ public class UserMangmntPage extends BasePage {
 
 
         driver.findElement(By.xpath("//label[text()='Status']//..//..//..//div[contains(@class,'oxd-select-wrapper')]")).click();
-        driver.findElement(By.xpath("//span[text()='"+ status +"'")).click();
+        driver.findElement(By.xpath("//span[text()='"+ status +"']")).click();
 
-        WebElement empName = driver.findElement(By.xpath("//label[text()='Employee Name']//..//..//..//div[contains(@class,'oxd-autocomplete-wrapper')]"));
+        // Type the employee name
+        WebElement empName = driver.findElement(By.xpath("//label[text()='Employee Name']//..//..//..//div[contains(@class,'oxd-autocomplete-wrapper')]//input"));
         empName.sendKeys(generatedEmpName);
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        WebElement firstOption = wait.until(ExpectedConditions.visibilityOfElementLocated(
-                By.xpath("//div[@role='listbox']//div[@class='oxd-autocomplete-option'][1]")
+// Wait until "Searching..." disappears
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(
+                By.xpath("//div[@role='listbox']//div[text()='Searching....']")
         ));
+
+// Wait for real options to appear
+        WebElement firstOption = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.xpath("//div[@role='listbox']//div[contains(@class,'oxd-autocomplete-option')]")
+        ));
+
+// Capture suggestion text (optional)
+        System.out.println("Dropdown suggestion: " + firstOption.getText());
+
+// Click the option
         firstOption.click();
 
-        WebElement password = driver.findElement(By.xpath("//label[text()='Password']//..//..//..//input[contains(@class,'oxd-input oxd-input--active')]"));
+        String selectedEmpName = empName.getAttribute("value");
+
+        System.out.println("Selected Employee Name: " + selectedEmpName);
+
+        WebElement password = driver.findElement(By.xpath("//label[text()='Password']//..//..//..//input"));
         password.click();
         password.sendKeys(generatedPassword);
 
