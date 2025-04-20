@@ -29,9 +29,10 @@ public class UserMngmntSteps {
         userMangmntPage.navigateToTab(ConstantsMapper.resolve(tabname));
     }
 
-    @Then("^user should land on (.*) succesfully$")
+    @Then("^user should land on (.*) successfully$")
     public void userShouldNavigateToTab(String tabname) {
         tabname = ConstantsMapper.resolve(tabname);
+        System.out.println(tabname);
         String getTabName = userMangmntPage.switchedToTab(tabname);
         Assert.assertEquals(tabname,getTabName);
     }
@@ -46,14 +47,25 @@ public class UserMngmntSteps {
         userMangmntPage.submitUserData();
     }
 
-
     @And("^User fills details with username password empname for (.*) and (.*)$")
     public void andUserFillsUserDetails(String role, String status) {
+        role = ConstantsMapper.resolve(role);
+        status = ConstantsMapper.resolve(status);
         TestData.generatedEmpName = UtilMethods.generateRandomEmpName();
-        
+        TestData.generatedUsername = UtilMethods.generateRandomUsername();
+        TestData.generatedPassword = UtilMethods.generateRandomPassword();
+        System.out.println(role);
+        System.out.println(TestData.generatedEmpName);
+        System.out.println(TestData.generatedUsername);
+        System.out.println(TestData.generatedPassword);
+        TestData.generatedEmpName = userMangmntPage.addUserDetailsAndReturnEmpName(role,status,TestData.generatedEmpName,TestData.generatedUsername,TestData.generatedPassword);
+
     }
 
     @Then("^user should be listed in the records table with (.*)$")
-    public void checkUserInfo(role) {
+    public void checkUserInfo(String role) {
+        userMangmntPage.validateUserInTable(TestData.generatedUsername, TestData.generatedEmpName,role);
+
     }
+
 }

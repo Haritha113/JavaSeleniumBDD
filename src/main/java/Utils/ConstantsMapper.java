@@ -9,10 +9,10 @@ public class ConstantsMapper {
     private static final Map<String, String> constants = Map.of(
             "ADMIN_TAB", AppConstants.ADMIN,
             "PIM_TAB", AppConstants.PIM,
-            "ADMIN", AppConstants.ROLE_ADMIN,
-            "ESS", AppConstants.ROLE_ESS,
-            "ENABLED", AppConstants.STATUS_ENABLED,
-            "DISABLED", AppConstants.STATUS_DISABLED
+            "ROLE_ADMIN", AppConstants.ROLE_ADMIN,
+            "ROLE_ESS", AppConstants.ROLE_ESS,
+            "STATUS_ENABLED", AppConstants.STATUS_ENABLED,
+            "STATUS_DISABLED", AppConstants.STATUS_DISABLED
     );
 
     public static String resolve(String key) {
